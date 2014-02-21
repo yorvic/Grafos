@@ -2,12 +2,7 @@
 Descripcion:ComponentesConexas */
 /*========================<Bibliotecas>=========================*/
 #include <stdio.h>
-#include <time.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
 /*========================< Constantes >========================*/
-#define	MAX_RUTAS	50
 #define	N	50
 #define	MAX_MATRIZ	100
 #define	INF			9999
@@ -28,7 +23,7 @@ typedef struct {
 
 typedef struct {
 	int n;
-	_arco conjA[MAX_RUTAS];
+	_arco conjA[N];
 }_conjuntoArcos;
 /*========================< Prototipos >========================*/
 void componentesConexas(_matriz a,int n,_conjVertices c[],int *p);
@@ -45,17 +40,14 @@ int main(){
 	/* IMPORTANTE LOS INDICES EMPIEZAN DESDE 1 */
 	_matriz m;	//Matriz de Ady
 	int n;		//Cantidad de Vertices
-	int i,j;
 	_conjVertices c[N];		//Conj de Vertices donde se almacenará los vertices de cada componente conexa
 	int p;		//Cantidad de Componentes Conexas
-	
+	int i,j;
 	/* Matriz de Prueba */
 	n=4;
 	m[1][2]=m[2][1]=3;
 	m[3][4]=m[4][3]=10;
-	
 	componentesConexas(m,n,c,&p);
-
 	/* Mostrar el Resultado por pantalla */
 	printf("\nNumero de Componentes Conexas: P=%d\n",p);
 	for( i=1 ; i<=n; i++ ){
@@ -64,7 +56,6 @@ int main(){
 			for( j=1 ; j<=c[i].n ; j++ )
 				printf("%d,",c[i].v[j]);
 			printf("}");
-
 		}
 	}
 	return 0;
