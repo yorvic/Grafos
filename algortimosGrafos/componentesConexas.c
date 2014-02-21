@@ -5,7 +5,7 @@ Descripcion:ComponentesConexas */
 /*========================< Constantes >========================*/
 #define	N	50
 #define	MAX_MATRIZ	100
-#define	INF			9999
+#define	INF	9999
 /*===========================< Tipos >==========================*/
 typedef int vertice;
 typedef int _vertices[N];
