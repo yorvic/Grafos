@@ -51,7 +51,7 @@ int main(){
 	/* Mostrar el Resultado por pantalla */
 	printf("\nNumero de Componentes Conexas: P=%d\n",p);
 	for( i=1 ; i<=n; i++ ){
-		if(c[i].n){
+		if(c[i].n){		//Si tiene vertices en esa componente conexa
 			printf("\nComponente #%d : {",i);
 			for( j=1 ; j<=c[i].n ; j++ )
 				printf("%d,",c[i].v[j]);
